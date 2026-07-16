@@ -1,13 +1,13 @@
 # report.py
 
+import os
 import sqlite3
 
-DATABASE = "attendance.db"
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "attendance.db")
 
 def get_connection():
     return sqlite3.connect(DATABASE)
-
 
 # ---------------- DAILY REPORT ----------------
 def daily_report():

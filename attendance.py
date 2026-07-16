@@ -1,14 +1,15 @@
 # attendance.py
 
-import sqlite3
+
 from datetime import date
+import os
+import sqlite3
 
-DATABASE = "attendance.db"
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "attendance.db")
 
 def get_connection():
     return sqlite3.connect(DATABASE)
-
 
 # ---------------- MARK ATTENDANCE ----------------
 def mark_attendance():

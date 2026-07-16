@@ -1,11 +1,11 @@
+import os
 import sqlite3
 
-DATABASE_NAME = "attendance.db"
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "attendance.db")
 
 def get_connection():
-    conn = sqlite3.connect(DATABASE_NAME)
-    return conn
+    return sqlite3.connect(DATABASE)
 
 
 def create_tables():

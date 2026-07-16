@@ -1,4 +1,8 @@
 # main.py
+import os
+
+print("Current Folder:", os.getcwd())
+print("Database Path:", os.path.abspath("attendance.db"))
 
 from database import create_tables
 from login import admin_login
